@@ -1,4 +1,4 @@
-# FIAP Postech Clone
+# FIAP Case
 
 A project built with Next.js 16 and SCSS. Features a fluid viewport scaling system that makes everything scale smoothly with screen size.
 
