@@ -1,0 +1,192 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-fixed;
+  height: $navbar-height-mobile;
+  background-color: transparent;
+  @include transition(background-color, height, box-shadow);
+
+  @include tablet-up {
+    height: $navbar-height;
+  }
+
+  &.scrolled {
+    background-color: #202121;
+    box-shadow: $shadow-sm;
+  }
+}
+
+.container {
+  @include flex-between;
+  height: 100%;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: $spacing-8;
+
+  @include desktop {
+    display: flex;
+  }
+}
+
+.navLink {
+  position: relative;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  text-decoration: none;
+  padding: $spacing-2 0;
+  @include transition(color);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color-primary;
+    @include transition(width);
+  }
+
+  &:hover {
+    color: $color-primary;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &.active {
+    color: $color-primary;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.centerLogo {
+  margin: 0 auto;
+}
+
+.menuButton {
+  @include button-reset;
+  @include flex-center;
+  width: 44px;
+  height: 44px;
+  color: $color-text-primary;
+  @include transition(color);
+
+  @include desktop {
+    display: none;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: $color-border-light;
+  overflow: hidden;
+
+  transition: opacity $transition-duration-normal $transition-timing,
+    background-color $transition-duration-normal $transition-timing;
+
+
+  &[data-at-top='true'] {
+    background-color: transparent !important;
+    opacity: 0;
+  }
+}
+
+.progressFill {
+  height: 100%;
+  background-color: $color-primary;
+  transform-origin: left;
+  @include transition(transform);
+}
+
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: $z-index-modal;
+}
+
+.mobileMenuOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn $transition-duration-fast $transition-timing;
+}
+
+.mobileMenuContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 85vw);
+  background-color: $color-background;
+  padding: $spacing-6;
+  animation: slideInFromRight $transition-duration-normal $transition-timing;
+}
+
+.closeButton {
+  @include button-reset;
+  @include flex-center;
+  position: absolute;
+  top: $spacing-4;
+  right: $spacing-4;
+  width: 44px;
+  height: 44px;
+  color: $color-text-primary;
+  @include transition(color);
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+  margin-top: $spacing-16;
+
+  .navLink {
+    font-size: $font-size-xl;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,71 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.courseRow {
+  @include flex-between;
+  padding: $spacing-4 0;
+  cursor: pointer;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba($color-border, 0.8);
+
+  transition: color $transition-duration-normal $transition-timing,
+    border-color $transition-duration-normal $transition-timing;
+
+
+
+  &:hover {
+    border-bottom: 1px solid $color-primary;
+    transition: color $transition-duration-normal $transition-timing,
+      border-color $transition-duration-normal $transition-timing;
+
+    .title {
+      color: $color-primary;
+    }
+
+    .tags {
+      .tag {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.title {
+  font-family: $font-family-display;
+  font-size: $font-size-1_5xl !important;
+  font-weight: $font-weight-medium;
+
+  transition: color $transition-duration-fast $transition-timing;
+  margin-right: 29px;
+
+  @include tablet-up {
+    font-size: $font-size-2xl;
+  }
+}
+
+.tags {
+  display: flex;
+  gap: $spacing-2;
+  flex-shrink: 0;
+  font-family: $font-family-primary;
+
+  transition: color $transition-duration-fast $transition-timing;
+}
+
+.tag {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wider;
+  color: $color-text-muted;
+  padding: 0 $spacing-2;
+  background-color: rgba($color-border, 0.2);
+  border-radius: $border-radius-sm;
+
+  transition: color $transition-duration-normal $transition-timing;
+
+
+  @include tablet-up {
+    font-size: $font-size-sm;
+  }
+}

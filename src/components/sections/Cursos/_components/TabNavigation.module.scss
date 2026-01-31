@@ -1,0 +1,11 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.tabNavigation {
+  display: flex;
+  gap: $spacing-20;
+
+  @include tablet-up {
+    gap: $spacing-24;
+  }
+}

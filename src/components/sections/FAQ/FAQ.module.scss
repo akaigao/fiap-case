@@ -1,0 +1,134 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.faq {
+  @include section-padding;
+  background-color: #000000;
+}
+
+.header {
+  margin-bottom: $spacing-12;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity $transition-duration-slow $transition-timing,
+              transform $transition-duration-slow $transition-timing;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-family: $font-family-display;
+  font-size: $font-size-5xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-light;
+  line-height: $line-height-tight;
+  margin-bottom: $spacing-2;
+
+  @include tablet-up {
+    font-size: $font-size-7xl;
+  }
+
+  @include desktop-lg {
+    font-size: $font-size-7_5xl;
+  }
+}
+
+.subtitle {
+  display: block;
+  font-family: $font-family-display;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-regular;
+  color: $color-primary;
+
+  @include tablet-up {
+    font-size: $font-size-xl;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-8;
+  opacity: 0;
+  transition: opacity $transition-duration-slow $transition-timing;
+  transition-delay: 200ms;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.faqItem {
+  min-height: 180px;
+  padding: $spacing-6 0;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+
+  @include focus-ring;
+
+}
+
+.faqItem[data-hovered='true'] {
+  .indicator {
+    background-color: $color-primary;
+  }
+  .question {
+    color: $color-text-light;
+  }
+  .answer {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.indicator {
+  width: 100%;
+  height: 4px;
+
+  background-color: $color-secondary;
+  transition: background-color $transition-duration-normal $transition-timing;
+
+  margin-bottom: $spacing-4;
+  border-radius: 2px;
+}
+
+.question {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  
+  color: $color-secondary;
+  transition: background-color $transition-duration-normal $transition-timing;
+
+  text-transform: uppercase;
+  line-height: $line-height-snug;
+  margin-bottom: $spacing-3;
+
+  @include tablet-up {
+    font-size: $font-size-lg;
+  }
+}
+
+.answer {
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: $line-height-relaxed;
+
+  @include tablet-up {
+    font-size: $font-size-base;
+  }
+}

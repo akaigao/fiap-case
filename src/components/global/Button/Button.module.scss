@@ -1,0 +1,138 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.button {
+  @include button-base;
+
+  position: relative;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background-color: $color-primary;
+  color: $color-text-light;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-dark;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.secondary {
+  background-color: $color-secondary;
+  color: $color-text-light;
+
+  &:hover:not(:disabled) {
+    background-color: #2d2d4a;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: $color-primary;
+  border: $border-width-2 solid $color-primary;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($color-primary, 0.1);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: $color-text-primary;
+
+  &:hover:not(:disabled) {
+    background-color: $color-background-alt;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+}
+
+.sm {
+  height: 2rem;
+  padding: 0 $spacing-3;
+  font-size: $font-size-sm;
+  border-radius: $border-radius-md;
+}
+
+.md {
+  height: 2.5rem;
+  padding: 0 $spacing-5;
+  font-size: $font-size-base;
+  border-radius: $border-radius-lg;
+}
+
+.lg {
+  height: 3rem;
+  padding: 0 $spacing-6;
+  font-size: $font-size-lg;
+  border-radius: $border-radius-lg;
+
+  @include tablet-up {
+    height: 3.5rem;
+    padding: 0 $spacing-8;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.loading {
+  color: transparent;
+
+  .label {
+    visibility: hidden;
+  }
+}
+
+.spinner {
+  position: absolute;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 1.25em;
+    height: 1.25em;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}

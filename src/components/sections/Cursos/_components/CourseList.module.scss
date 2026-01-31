@@ -1,0 +1,12 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.courseList {
+  margin-top: $spacing-6;
+  color: $color-text-secondary;
+  width: 60%;
+
+  @include tablet-up {
+    margin-top: $spacing-8;
+  }
+}

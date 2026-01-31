@@ -1,0 +1,44 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.tabButton {
+  @include button-reset;
+  position: relative;
+  padding: 10px 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wider;
+  color: $color-text-secondary;
+  transition: color $transition-duration-fast $transition-timing;
+
+  @include tablet-up {
+    font-size: $font-size-base;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &[data-active='true'] {
+    color: $color-text-primary;
+  }
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: $color-primary;
+  border-radius: $border-radius-full;
+  width: 39%;
+  height: 6px;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  font-size: $font-size-base;
+}

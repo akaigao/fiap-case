@@ -1,0 +1,45 @@
+// Fluid Viewport Scaling System
+// 1rem = 10px at reference viewport, scales proportionally with screen width
+
+$fluid-viewport-desktop: 1920px !default;
+$fluid-viewport-tablet: 1024px !default;
+$fluid-viewport-mobile: 414px !default;
+$fluid-base-multiplier: 10 !default;
+$fluid-breakpoint-tablet: 1024px !default;
+$fluid-breakpoint-mobile: 599px !default;
+$fluid-min-font-size: 8px !default;
+$fluid-max-font-size: 12px !default;
+
+@function fluid-calc($reference-viewport, $multiplier: $fluid-base-multiplier) {
+  @return calc(100vw / #{$reference-viewport} * #{$multiplier});
+}
+
+@function px-to-fluid-rem($px) {
+  @return #{$px / 10}rem;
+}
+
+@mixin apply-fluid-scale() {
+  html {
+    font-size: clamp(
+      #{$fluid-min-font-size},
+      #{fluid-calc($fluid-viewport-desktop)},
+      #{$fluid-max-font-size}
+    );
+
+    @media (max-width: #{$fluid-breakpoint-tablet}) {
+      font-size: clamp(
+        #{$fluid-min-font-size},
+        #{fluid-calc($fluid-viewport-tablet)},
+        #{$fluid-max-font-size}
+      );
+    }
+
+    @media (max-width: #{$fluid-breakpoint-mobile}) {
+      font-size: clamp(
+        #{$fluid-min-font-size},
+        #{fluid-calc($fluid-viewport-mobile)},
+        #{$fluid-max-font-size}
+      );
+    }
+  }
+}

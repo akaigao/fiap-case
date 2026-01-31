@@ -1,0 +1,21 @@
+@use '../../../../styles/variables' as *;
+
+.iconContainer {
+  width: 56px;
+  height: 56px;
+  border-radius: $border-radius-full;
+  border: 2px solid $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-light;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

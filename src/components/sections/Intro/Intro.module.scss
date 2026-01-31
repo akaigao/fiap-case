@@ -1,0 +1,37 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.intro {
+  overflow: hidden;
+  background-color: $color-background;
+  padding-top: $spacing-16;
+
+  @include tablet-up {
+    padding-top: $spacing-24;
+  }
+}
+
+.heroSection {
+  display: none;
+
+  @include tablet-up {
+    display: block;
+  }
+}
+
+.marqueeSection {
+  margin-bottom: 0;
+
+  @include tablet-up {
+    margin-bottom: 53px;
+  }
+}
+
+.scrollTextSection {
+  display: none;
+
+  @include tablet-up {
+    display: block;
+    margin: -80px 0 0 0;
+  }
+}

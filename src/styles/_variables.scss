@@ -1,0 +1,160 @@
+$color-primary: #ED145B;
+$color-primary-dark: #C41049;
+$color-primary-light: #FF4081;
+$color-secondary: #8A959B;
+$color-accent: #00D4FF;
+
+$color-background: #000000;
+$color-background-alt: #F5F5F7;
+$color-background-dark: #0D0D0D;
+
+$color-text-primary: #FFFFFF;
+$color-text-secondary: #6B7280;
+$color-text-light: #FFFFFF;
+$color-text-muted: #9CA3AF;
+
+$color-border: #2D2D4A;
+$color-border-light: #3D3D5A;
+
+$color-success: #10B981;
+$color-warning: #F59E0B;
+$color-error: #FF0000;
+
+$font-family-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family-mono: 'JetBrains Mono', monospace;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-1_5xl: 1.375rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+$font-size-4xl: 2.25rem;
+$font-size-5xl: 3rem;
+$font-size-6xl: 3.75rem;
+$font-size-7xl: 4.5rem;
+$font-size-7_5xl: 5.625rem;
+$font-size-8xl: 7.5rem;
+$font-size-9xl: 9rem;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+$line-height-tight: 1.1;
+$line-height-snug: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 2;
+
+$letter-spacing-tighter: -0.05em;
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.025em;
+$letter-spacing-wider: 0.05em;
+
+$spacing-0: 0;
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 0.75rem;
+$spacing-4: 1rem;
+$spacing-5: 1.25rem;
+$spacing-6: 1.5rem;
+$spacing-8: 2rem;
+$spacing-10: 2.5rem;
+$spacing-12: 3rem;
+$spacing-16: 4rem;
+$spacing-20: 5rem;
+$spacing-24: 6rem;
+$spacing-32: 8rem;
+
+$breakpoint-xs: 320px;
+$breakpoint-sm: 360px;
+$breakpoint-md: 414px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-lg: 820px;
+$breakpoint-tablet-xl: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1366px;
+$breakpoint-2xl: 1440px;
+$breakpoint-3xl: 1600px;
+$breakpoint-4xl: 1920px;
+$breakpoint-5xl: 2560px;
+$breakpoint-6xl: 3840px;
+
+$container-max-width: 1440px;
+$container-padding: $spacing-6;
+$container-padding-mobile: $spacing-4;
+
+$navbar-height: 5rem;
+$navbar-height-mobile: 4rem;
+
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-2xl: 1.5rem;
+$border-radius-full: 9999px;
+
+$border-width: 1px;
+$border-width-2: 2px;
+
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+$transition-duration-fast: 150ms;
+$transition-duration-normal: 300ms;
+$transition-duration-slow: 500ms;
+$transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-timing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-popover: 600;
+$z-index-tooltip: 700;
+
+// Fluid tokens (1rem = 10px at reference viewport)
+$fluid-font-xs: 1.2rem;
+$fluid-font-sm: 1.4rem;
+$fluid-font-base: 1.6rem;
+$fluid-font-lg: 1.8rem;
+$fluid-font-xl: 2rem;
+$fluid-font-2xl: 2.4rem;
+$fluid-font-3xl: 3rem;
+$fluid-font-4xl: 3.6rem;
+$fluid-font-5xl: 4.8rem;
+$fluid-font-6xl: 6rem;
+$fluid-font-7xl: 7.2rem;
+$fluid-font-8xl: 9.6rem;
+$fluid-font-9xl: 14.4rem;
+
+$fluid-spacing-1: 0.4rem;
+$fluid-spacing-2: 0.8rem;
+$fluid-spacing-3: 1.2rem;
+$fluid-spacing-4: 1.6rem;
+$fluid-spacing-5: 2rem;
+$fluid-spacing-6: 2.4rem;
+$fluid-spacing-8: 3.2rem;
+$fluid-spacing-10: 4rem;
+$fluid-spacing-12: 4.8rem;
+$fluid-spacing-16: 6.4rem;
+$fluid-spacing-20: 8rem;
+$fluid-spacing-24: 9.6rem;
+$fluid-spacing-32: 12.8rem;
+
+$fluid-section-sm: 7rem;
+$fluid-section-md: 10rem;
+$fluid-section-lg: 15rem;

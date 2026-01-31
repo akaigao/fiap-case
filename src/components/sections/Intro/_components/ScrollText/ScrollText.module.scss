@@ -1,0 +1,43 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.container {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+
+  @include tablet-up {
+    gap: $spacing-6;
+  }
+}
+
+.row {
+  white-space: nowrap;
+  will-change: transform;
+  transform: translateZ(0);
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  font-family: $font-family-display;
+  font-size: $font-size-7xl;
+  font-weight: $font-weight-bold;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-tight;
+
+  -webkit-text-stroke: 0.5px #fff;
+
+
+  @include tablet-up {
+    font-size: $font-size-8xl;
+  }
+
+  @include desktop-lg {
+    font-size: $font-size-9xl;
+  }
+}

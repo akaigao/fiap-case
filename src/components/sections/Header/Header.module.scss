@@ -1,0 +1,79 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: $navbar-height-mobile;
+  overflow: hidden;
+  background-color: $color-background;
+
+  @include tablet-up {
+    padding-top: $navbar-height;
+  }
+}
+
+.watermark {
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-weight: $font-weight-black;
+  color: rgba(#ffffff, 0.06);
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wider;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+
+  @include tablet {
+    font-size: 16vw;
+  }
+
+  @include desktop {
+    font-size: 18vw;
+    top: 93%;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.title {
+  font-weight: $font-weight-regular;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+  text-align: left;
+  text-indent: 0.8em;
+
+  font-size: $font-size-3xl;
+
+  @include tablet {
+    font-size: $font-size-6xl;
+  }
+
+  @include desktop {
+    font-size: $font-size-8xl;
+  }
+}
+
+.title>span:first-child {
+  &[data-first-line='true'] {
+    margin: 0 20px;
+
+    @include tablet {
+      margin: 0 45px;
+    }
+
+    @include desktop {
+      margin: 0 90px;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: $spacing-3 0;
+
+  @include tablet-up {
+    padding: $spacing-4 0;
+  }
+}
+
+.track {
+  display: flex;
+  gap: $spacing-8;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+
+  &.reverse {
+    animation-name: scroll-right;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.text {
+  flex-shrink: 0;
+  font-family: $font-family-display;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-regular;
+  color: $color-text-primary;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-tight;
+  white-space: nowrap;
+  padding-right: $spacing-4;
+  line-height: $line-height-tight;
+
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+
+  @include tablet-up {
+    font-size: $font-size-5xl;
+    text-underline-offset: 12px;
+    padding-right: $spacing-6;
+  }
+
+  @include desktop {
+    font-size: $font-size-6xl;
+    text-underline-offset: 15px;
+    padding-right: $spacing-8;
+  }
+
+  @include desktop-lg {
+    font-size: $font-size-7_5xl;
+    text-underline-offset: 18px;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0) translateZ(0);
+  }
+  100% {
+    transform: translateX(-25%) translateZ(0);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-25%) translateZ(0);
+  }
+  100% {
+    transform: translateX(0) translateZ(0);
+  }
+}

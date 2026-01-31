@@ -1,0 +1,43 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.logo {
+
+  display: inline-flex;
+  align-items: center;
+  @include transition(opacity);
+  @include focus-ring;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.image {
+  width: auto;
+  height: auto;
+}
+
+.sm {
+  .image {
+    width: 80px;
+    height: 24px;
+    max-height: 24px;
+  }
+}
+
+.md {
+  .image {
+    width: 100px;
+    height: 30px;
+    max-height: 30px;
+  }
+}
+
+.lg {
+  .image {
+    width: 120px;
+    height: 36px;
+    max-height: 36px;
+  }
+}

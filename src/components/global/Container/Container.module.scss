@@ -1,0 +1,18 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.container {
+  @include container;
+}
+
+.default {
+  max-width: $container-max-width;
+}
+
+.narrow {
+  max-width: 960px;
+}
+
+.wide {
+  max-width: 1600px;
+}

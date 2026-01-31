@@ -1,0 +1,168 @@
+@use 'variables' as *;
+
+// -----------------------------
+// Font Face Declarations
+// -----------------------------
+// Note: Using Google Fonts via next/font in layout.tsx
+// These are fallback declarations if needed
+
+// -----------------------------
+// Heading Styles
+// -----------------------------
+.heading-1 {
+  font-family: $font-family-display;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-5xl;
+  }
+
+  @media (min-width: $breakpoint-tablet-xl) {
+    font-size: $font-size-6xl;
+  }
+
+  @media (min-width: $breakpoint-4xl) {
+    font-size: $font-size-7xl;
+  }
+}
+
+.heading-2 {
+  font-family: $font-family-display;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-4xl;
+  }
+
+  @media (min-width: $breakpoint-tablet-xl) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.heading-3 {
+  font-family: $font-family-display;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-snug;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.heading-4 {
+  font-family: $font-family-display;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-snug;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.heading-5 {
+  font-family: $font-family-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-snug;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-xl;
+  }
+}
+
+.heading-6 {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-snug;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-lg;
+  }
+}
+
+// -----------------------------
+// Body Text Styles
+// -----------------------------
+.body-large {
+  font-family: $font-family-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-relaxed;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-xl;
+  }
+}
+
+.body-base {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+}
+
+.body-small {
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+}
+
+.body-xs {
+  font-family: $font-family-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+}
+
+// -----------------------------
+// Special Text Styles
+// -----------------------------
+.label {
+  font-family: $font-family-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  letter-spacing: $letter-spacing-wide;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-family: $font-family-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $color-text-muted;
+}
+
+.code {
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+}
+
+.link {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-duration-fast $transition-timing;
+
+  &:hover {
+    color: $color-primary-dark;
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}

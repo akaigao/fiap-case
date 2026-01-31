@@ -1,0 +1,75 @@
+@use '../styles/variables' as *;
+@use '../styles/fluid-scale';
+@use '../styles/reset';
+@use '../styles/typography';
+@use '../styles/animations';
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-primary-light: #{$color-primary-light};
+  --color-secondary: #{$color-secondary};
+  --color-accent: #{$color-accent};
+
+  --color-background: #{$color-background};
+  --color-background-alt: #{$color-background-alt};
+  --color-background-dark: #{$color-background-dark};
+
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-light: #{$color-text-light};
+  --color-text-muted: #{$color-text-muted};
+
+  --color-border: #{$color-border};
+  --color-border-light: #{$color-border-light};
+
+  --font-family-primary: #{$font-family-primary};
+  --font-family-display: #{$font-family-display};
+  --font-family-mono: #{$font-family-mono};
+
+  --navbar-height: #{$navbar-height};
+  --navbar-height-mobile: #{$navbar-height-mobile};
+  --container-max-width: #{$container-max-width};
+
+  --transition-fast: #{$transition-duration-fast};
+  --transition-normal: #{$transition-duration-normal};
+  --transition-slow: #{$transition-duration-slow};
+  --transition-timing: #{$transition-timing};
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: $spacing-2 $spacing-4;
+  background: $color-primary;
+  color: $color-text-light;
+  z-index: $z-index-tooltip;
+  transition: top $transition-duration-fast $transition-timing;
+
+  &:focus {
+    top: 0;
+  }
+}

@@ -1,0 +1,43 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.cursos {
+  @include section-padding;
+  background-color: $color-background;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  margin-bottom: $spacing-8;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity $transition-duration-slow $transition-timing,
+    transform $transition-duration-slow $transition-timing;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  @include heading-display;
+  font-size: $font-size-5xl;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wider;
+}
+
+.accordionContainer {
+  border-top: 1px solid rgba($color-border, 0.8);
+}
