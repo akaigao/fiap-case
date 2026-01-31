@@ -1,6 +1,6 @@
 # FIAP Postech Clone
 
-A pixel-perfect recreation of the FIAP Postech website, built with Next.js 16 and SCSS. Features a fluid viewport scaling system that makes everything scale smoothly with screen size.
+A project built with Next.js 16 and SCSS. Features a fluid viewport scaling system that makes everything scale smoothly with screen size.
 
 ## Quick Start
 
